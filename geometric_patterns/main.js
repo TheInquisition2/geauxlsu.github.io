@@ -5,7 +5,7 @@ var rVal;
 var gVal;
 var bVal;
 
-function setup() 
+function setup()
 {
     createCanvas(480, 600);
     frameRate(5);
@@ -15,11 +15,11 @@ function setup()
     gVal = 0;
     bVal = 0;
 }
-function draw() 
+function draw()
 {
 
     var isShifted = false;
-    
+
     var y = height;
     while (y>= 0)
     {
@@ -27,7 +27,7 @@ function draw()
         if (isShifted)
         {
             x = circleRadius;
-        } 
+        }
         else
         {
             x = 0;
@@ -41,10 +41,9 @@ function draw()
         }
         y = y - circleRadius;
         isShifted = !isShifted;
-        
+
         rVal = (rVal + 254) % 256;
         gVal = (gVal + 7) % 256;
         bVal = (bVal + 3) % 256;
     }
 }
-    
