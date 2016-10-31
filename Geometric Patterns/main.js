@@ -4,24 +4,33 @@ var circleRadius;
 
 function setup() 
 {
-    circleRadius = circleDiameter/2;
     createCanvas(480, 600);
     circleDiameter = width/NUM_CIRCLES;
+    circleRadius = circleDiameter/2;
 }
 function draw() 
 {
-    var y = 0;
-    while (y<= height)
-    {
-        
+    var isShifted = false;
     
+    var y = height;
+    while (y>= 0)
+    {
         var x =0;
+        if (isShifted)
+        {
+            x = circleRadius;
+        } 
+        else
+        {
+            x = 0;
+        }
         while (x <= width)
         {
             ellipse(x,y,circleDiameter,circleDiameter);
             x = x +circleDiameter;
         }
-        y = y +circleRadius;
+        y = y - circleRadius;
+        isShifted = !isShifted;
     }
 }
     
