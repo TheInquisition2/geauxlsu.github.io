@@ -1,8 +1,10 @@
 var NUM_CIRCLES = 12;
 var circleDiameter;
+var circleRadius;
 
 function setup() 
 {
+    circleRadius = circleDiameter/2;
     createCanvas(480, 600);
     circleDiameter = width/NUM_CIRCLES;
 }
@@ -19,7 +21,7 @@ function draw()
             ellipse(x,y,circleDiameter,circleDiameter);
             x = x +circleDiameter;
         }
-        y = y +circleDiameter
+        y = y +circleRadius;
     }
 }
     
